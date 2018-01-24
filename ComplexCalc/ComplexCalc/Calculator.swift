@@ -58,4 +58,27 @@ class Calculator {
     public func divide(lhs: Int, rhs: Int) -> Int {
         return self.divide([lhs, rhs])
     }
+    
+    // Count
+    public func count(_ nums: [Int]) -> Int {
+        return nums.count
+    }
+    
+    // Avg
+    public func avg(_ nums: [Int]) -> Int {
+        return self.add(nums) / nums.count
+    }
+    
+    // MathOp
+    public func mathOp(lhs: Int, rhs: Int, op: (Int, Int) -> Int) -> Int {
+        return op(lhs, rhs)
+    }
+    
+    public func mathOp(args: [Int], beg: Int, op: (Int, Int) -> Int) -> Int {
+        var result = beg
+        for num in args {
+            result = op(num, result)
+        }
+        return result;
+    }
 }
